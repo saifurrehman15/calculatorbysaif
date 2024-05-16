@@ -1,1 +1,1 @@
-http://calculatorbysaif2.netlify.app
+http://calculator2bysaif.netlify.app
