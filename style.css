@@ -1,0 +1,249 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(to right, #1991FF, #29A8FF);
+}
+
+div {
+    visibility: visible;
+
+}
+
+h2 {
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    /* letter-spacing: 2px; */
+}
+
+.body {
+    box-shadow: 0px 20px 20px;
+    background: #f1f1f1;
+    /* border: 2px solid rgb(80, 80, 80); */
+    background-color: #17181A;
+    width: 100%;
+
+    height: 100vh;
+    /* border-radius: 20px; */
+    /* margin: 20px auto; */
+    padding: 8px 5px 8px 0px;
+}
+
+.screen {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.cal {
+    background-color: #0da533 !important;
+    color: #fff !important;
+}
+
+.container {
+    display: flex;
+    height: 67%;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    /* border: 1px solid white; */
+    padding: 10px;
+    margin: 70px 0px 0px 0px;
+}
+
+.screen input {
+    font-size: 25px;
+    text-align: right;
+    width: 100%;
+    outline: none;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #17181A;
+    border: none;
+    color: #fff;
+    cursor: auto;
+    padding: 0px 10px;
+    font-weight: bolder;
+}
+
+.his {
+    text-align: end;
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff5e;
+}
+
+.cal {
+    display: flex;
+    justify-content: center;
+}
+
+.dlt {
+    width: 25%;
+    outline: none;
+    height: 55px;
+    border-radius: 4px;
+    background: #303136;
+    color: #94bdd8;
+    cursor: auto;
+    padding: 0px 10px;
+    border: none;
+}
+
+.frac {
+    width: 25%;
+    outline: none;
+    height: 55px;
+    border-radius: 4px;
+    background: #303136;
+    color: #94bdd8;
+    cursor: auto;
+    padding: 0px 10px;
+    border: none;
+
+}
+
+.rowmy {
+    display: flex;
+    gap: 3px;
+    margin: 2px 0px 1px 0px;
+    align-items: flex-end;
+    width: 100%;
+    justify-content: center;
+}
+
+
+input[type="button"] {
+    height: 55px;
+    border-radius: 4px;
+    width: 25%;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #303136;
+    color: #94bdd8;
+    border: none;
+}
+
+input[type="button"]:hover {
+    background-color: #30313659;
+
+}
+.dlt-btn {
+    border: none;
+    /* border-radius: 5px; */
+    background: none;
+}
+
+.icon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.respon {
+    display: none;
+}
+
+
+.bottom {
+    border-bottom: 2px solid blue;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.overFlow {
+    border: 1px solid blac;
+    height: 100vh;
+    width: 550px;
+    background-color: #17181A;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    z-index: 999;
+    padding: 0px 10px;
+
+}
+
+.overFlow::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width:600px) {
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .screen {
+        margin-top: -36px;
+    }
+.canvamy{
+    height: 300px !important;
+    background-color: #17181A !important;
+    color: #fff !important;
+}
+
+    .body {
+        height: 100%;
+        margin: 0px;
+        display: flex;
+        padding: 10px 0px 0px 0px;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .overFlow {
+        display: none;
+    }
+
+    .respon {
+        display: block;
+    }
+
+    input[type="button"] {
+        height: 55px;
+        border-radius: 10px;
+        width: 25%;
+        font-size: 18px;
+        background-color: #303136;
+        color: #29A8FF;
+        border: none;
+    }
+.container{
+    margin: 62px 0px 0px 0px;
+}
+    .rowmy {
+        display: flex;
+        gap: 25px;
+        margin: 5px 0px;
+        align-items: flex-end;
+        width: 100%;
+        justify-content: center;
+    }
+
+    button {
+        border-radius: 10px !important;
+    }
+
+    .icon {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        padding: 0px 10px;
+    }
+    .icon img {
+        height: 20px;
+    }
+
+    .screen {
+        width: 100%;
+    }
+}

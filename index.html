@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="cal">
+        <div class="body">
+            <div style="display: flex;flex-direction: column;">
+                <div class="icon"><img src="images/history_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="" class="respon"
+                        data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">
+                </div><br>
+                <input type="text" id="his" readonly class="his" />
+                <div class="screen">
+                    <input type="text" name="" placeholder="0" id="demo" readonly maxlength="3">
+                </div>
+            </div>
+            <!-- Modal -->
+
+
+            <div class="offcanvas offcanvas-bottom canvamy" tabindex="-1" id="offcanvasExample"
+                aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header" style="display: flex;justify-content: space-between;">
+                    <div style="display: flex;flex-direction: column;align-items: start;">
+                        <h3 class="bottom">History</h3>
+                        <span id="empty2">There's no history yet. </span>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+
+
+                    <div>
+
+                        <div style="display: flex;justify-content: flex-end;overflow: scroll;">
+                            <span id="history2"></span>
+                        </div>
+                        </span>
+
+                        <!-- <div id="ans"></div> -->
+
+                    </div>
+
+
+
+
+                </div>
+                <div id="dlt-btn2"
+                    style="position: fixed;bottom: 0px;display: flex;width: 100%;border: 1px solid whit;;background-color: #17181a;height: 40px;margin: 20px 0px 0px 0px;z-index: 999;">
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="container">
+
+                <div class="rowmy">
+                    <input type="button" name="" id="" value="%" onclick="percent()">
+                    <input type="button" name="" id="" value="CE" onclick="clearVisual('CE')" class="dlt">
+                    <input type="button" name="" id="" value="√" onclick="operator('√')" style="width: 25%;">
+
+                    <button onclick="remove('del')" class="dlt">
+                        <img src="images/Vector.png" height="18" width="20" alt="">
+                    </button>
+
+                </div>
+
+                <div class="rowmy">
+                    <button onclick="frac()" class="frac">
+                        1/<span style="font-style: italic;">x</span>
+                    </button>
+                    <button type="button" onclick="sqr()" class="dlt">x<sup>2</sup></button>
+                    <button type="button" onclick="cube()" class="dlt">x<sup>3</sup></button>
+
+                    <input type="button" name="" id="" value="÷" onclick="operator('/')" style="width: 25%;">
+                </div>
+
+
+                <div class="rowmy">
+                    <input type="button" name="" id="" value="7" onclick="numberVisual('7')">
+                    <input type="button" name="" id="" value="8" onclick="numberVisual('8')">
+                    <input type="button" name="" id="" value="9" onclick="numberVisual('9')">
+                    <input type="button" name="" id="" value="x" onclick="operator('*')" style="width: 25%;;">
+
+                </div>
+                <div class="rowmy">
+                    <input type="button" name="" id="" value="4" onclick="numberVisual('4')">
+                    <input type="button" name="" id="" value="5" onclick="numberVisual('5')">
+                    <input type="button" name="" id="" value="6" onclick="numberVisual('6')">
+                    <input type="button" name="" id="" value="+" onclick="operator('+')" style="width: 25%;">
+
+                </div>
+                <div class="rowmy">
+                    <input type="button" name="" id="" value="1" onclick="numberVisual('1')">
+                    <input type="button" name="" id="" value="2" onclick="numberVisual('2')">
+                    <input type="button" name="" id="" value="3" onclick="numberVisual('3')">
+                    <input type="button" name="" id="" value="-" onclick="operator('-')" style="width: 25%;">
+
+                </div>
+                <div class="rowmy">
+                    <input type="button" name="" id="" value="00" onclick="numberVisual('00')">
+                    <input type="button" name="" id="" value="0" onclick="numberVisual('0')">
+                    <input type="button" name="" id="" value="." onclick="point('.')">
+                    <input type="button" name="" id="" value="=" onclick="calculate('=')" class="cal">
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="overFlow">
+            <div style="position: fixed;top: 0px;background-color: #17181A;width: 100%;">
+
+                <h3 class="bottom">History</h3>
+                <span id="empty">There's no history yet. </span>
+
+            </div>
+
+            <div style="display: flex;justify-content: flex-end;">
+                <span id="history"></span>
+            </div>
+            </span>
+            <div id="dlt-btn"
+                style="position: fixed;bottom: 0px;display: flex;width: 100%;border: 1px solid whit;;background-color: #17181a;height: 80px;margin: 20px 0px 0px 0px;z-index: 999;">
+            </div>
+            <!-- <div id="ans"></div> -->
+
+        </div>
+
+        <script>
+
+            let count = 0;
+
+
+
+
+            function operator(value2) {
+                var input = document.getElementById('demo');
+                let input2 = document.getElementById('his');
+                var currentValue = input.value;
+                let negativeValueCheck = input.value.slice(0, 1);
+
+                console.log(negativeValueCheck);
+                if (negativeValueCheck === '-' && currentValue.length <= 3) {
+                    input.value += value2;
+                    input2.value += value2;
+                } else if (/[-+*/√]/.test(currentValue)) {
+                    return;
+                } else {
+                    input.value += value2;
+                    input2.value += value2;
+                }
+            }
+
+
+
+
+            function calculate() {
+
+                let currentValue = document.getElementById('demo').value.slice(-1);
+                if (currentValue === "+" || currentValue === "/" || currentValue === "*" || currentValue === "-" || currentValue === "√") {
+                    document.getElementById('demo').value = 'Syntax Error';
+
+                }
+
+
+
+
+                let expression = document.getElementById('demo').value;
+
+
+                if (expression.length > 35) {
+                    document.getElementById('demo').value = 'Syntax Error(numbers limit reached)';
+
+                } else {
+                    if (expression === "") {
+                        document.getElementById('demo').value = 'Syntax Error';
+                        document.getElementById('dlt-btn').innerHTML = ""
+                        document.getElementById('dlt-btn2').innerHTML = ""
+
+                    }
+
+
+                    let count = 0;
+                    let ans = 0;
+                    let expression2;
+                    for (let i = 0; i < expression.length; i++) {
+                        if (expression[i] === "+") {
+
+                            let num1 = expression.slice(0, i);
+                            console.log(num1);
+
+                            let num2 = expression.slice(i + 1);
+                            ans = Number(num1) + Number(num2)
+                            expression2 = document.getElementById('his').value;
+
+                            document.getElementById('his').value = expression2 + " = ";
+                            if (isNaN(ans)) {
+                                document.getElementById('demo').value = 'Syntax Error';
+                                ans = 'Syntax Error';
+
+                            }
+                            document.getElementById('demo').value = ans;
+
+                        }
+                        if (expression[i] === "-") {
+
+                            let num1 = + expression.slice(0, i);
+                            let num2 = + expression.slice(i + 1);
+                            ans = num1 - num2;
+                            expression2 = document.getElementById('his').value;
+                            document.getElementById('his').value = expression2 + " = ";
+                            if (isNaN(ans)) {
+                                document.getElementById('demo').value = 'Syntax Error';
+                                ans = 'Syntax Error';
+
+                            }
+                            document.getElementById('demo').value = ans;
+
+                        }
+                        if (expression[i] === "*") {
+                            let num1 = + expression.slice(0, i);
+                            let num2 = + expression.slice(i + 1);
+                            ans = num1 * num2;
+                            expression2 = document.getElementById('his').value;
+                            document.getElementById('his').value = expression2 + " = ";
+                            if (isNaN(ans)) {
+                                document.getElementById('demo').value = 'Syntax Error';
+                                ans = 'Syntax Error';
+
+                            }
+                            document.getElementById('demo').value = ans;
+
+                        }
+                        if (expression[i] === "/") {
+
+                            let num1 = + expression.slice(0, i);
+                            let num2 = + expression.slice(i + 1);
+                            ans = num1 / num2;
+                            expression2 = document.getElementById('his').value;
+                            document.getElementById('his').value = expression2 + "=";
+                            document.getElementById('his').innerHTML = expression2 + "=";
+                            if (/[.]/.test(ans)) {
+                                ans = ans.toFixed(4)
+                            }
+
+                            if (isNaN(ans)) {
+                                document.getElementById('demo').value = 'Syntax Error';
+                                ans = 'Syntax Error';
+
+                            }
+
+                            document.getElementById('demo').value = ans;
+
+                        }
+                        if (expression[i] === "√") {
+
+                            let num2 = + expression.slice(i + 1);
+                            ans = Math.sqrt(num2);
+                            expression2 = document.getElementById('his').value;
+                            document.getElementById('his').value = expression2 + " = ";
+                            if (isNaN(ans)) {
+                                document.getElementById('demo').value = 'Syntax Error';
+                                ans = 'Syntax Error';
+
+                            }
+                            document.getElementById('demo').value = ans;
+
+                        }
+                    }
+                    if (ans !== 0) {
+                        document.getElementById('history').innerHTML += " <br><br>Expression : " + expression + "=<br> Ans = " + ans;
+                        document.getElementById('history2').innerHTML += " <br><br>Expression : " + expression + "=<br> Ans = " + ans;
+
+                    }
+
+
+                    if (expression === "" || expression === 'Syntax Error') {
+                        document.getElementById('demo').value = 'Syntax Error';
+                        document.getElementById('his').value = 'Syntax Error';
+
+                        //For Mobile Devices
+                        document.getElementById('dlt-btn').innerHTML = ""
+                        document.getElementById('dlt-btn2').innerHTML = ""
+
+                    } else {
+                        document.getElementById('empty').innerHTML = "";
+                        document.getElementById('empty2').innerHTML = "";
+
+                        //For Mobile Devices
+                        document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+                        document.getElementById('dlt-btn2').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                    }
+
+
+                }
+
+            }
+
+            function numberVisual(value) {
+                let scrVal = document.getElementById('demo').value;
+                console.log(scrVal);
+                if (scrVal === 'Syntax Error') {
+                    document.getElementById('demo').value = 'Syntax Error';
+
+                    document.getElementById('his').value = 'Syntax Error';
+
+                } else {
+                    document.getElementById('demo').value += value;
+
+                    document.getElementById('his').value += value;
+
+                }
+
+            }
+
+
+            function percent() {
+                let val = document.getElementById('demo').value;
+                ans = val / 100;
+                if (val === "" || val === "+" || val === "-" || val === "*" || val === "/" || val === "√") {
+                    document.getElementById('demo').value = "";
+                } else {
+                    expression2 = document.getElementById('his').value;
+                    document.getElementById('his').value = expression2 + " % = ";
+
+                    document.getElementById('demo').value = ans;
+                    document.getElementById('empty').innerHTML = "";
+                    document.getElementById('empty2').innerHTML = "";
+
+                    document.getElementById('history').innerHTML = "<br><br>" + expression2 + " % =<br>" + ans;
+                    document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                    document.getElementById('history2').innerHTML = "<br><br>" + expression2 + " % =<br>" + ans;
+                    document.getElementById('dlt-btn2').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+
+                }
+            }
+
+            function sqr() {
+                let val = document.getElementById('demo').value;
+                ans = Math.pow(val, 2);
+                if (val === "" || val === "+" || val === "-" || val === "*" || val === "/" || val === "√") {
+                    document.getElementById('demo').value = "";
+
+                } else {
+                    expression2 = document.getElementById('his').value;
+                    document.getElementById('his').value = "Sqr " + expression2 + "  = ";
+
+                    document.getElementById('demo').value = ans;
+                    document.getElementById('empty').innerHTML = "";
+                    document.getElementById('empty2').innerHTML = "";
+
+                    document.getElementById('history').innerHTML = "<br><br>Sqr " + expression2 + " =<br>" + ans;
+                    document.getElementById('history2').innerHTML = "<br><br>Sqr " + expression2 + " =<br>" + ans;
+
+                    document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+                    document.getElementById('dlt-btn2').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                }
+            }
+
+
+
+
+            function cube() {
+                let val = document.getElementById('demo').value;
+                let cube = document.getElementById('cube');
+
+                ans = Math.pow(val, 3);
+
+                if (val === "" || val === "+" || val === "-" || val === "*" || val === "/" || val === "√") {
+                    document.getElementById('demo').value = "";
+                } else {
+                    expression2 = document.getElementById('his').value;
+                    document.getElementById('his').value = "Cube " + expression2 + "  = ";
+
+                    document.getElementById('demo').value = ans;
+                    document.getElementById('empty').innerHTML = "";
+                    document.getElementById('empty2').innerHTML = "";
+
+                    document.getElementById('history').innerHTML = `<br><br>Expression :  ${expression2} Cube <br>Ans :  ${ans}`;
+                    document.getElementById('history2').innerHTML = `<br><br>Expression :  ${expression2} Cube <br>Ans :  ${ans}`;
+
+                    document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+                    document.getElementById('dlt-btn2').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                }
+            }
+
+
+            function frac() {
+                let val = document.getElementById('demo').value;
+                if (val == 0 || val === "" || val === "+" || val === "-" || val === "*" || val === "/" || val === "√") {
+
+                    document.getElementById('demo').value = "";
+
+                } else {
+                    ans = 1 / val;
+                    expression2 = document.getElementById('his').value;
+                    document.getElementById('his').value = "1/(" + expression2 + ") =";
+
+                    document.getElementById('demo').value = ans;
+                    document.getElementById('empty').innerHTML = "";
+                    document.getElementById('empty2').innerHTML = "";
+
+                    document.getElementById('history').innerHTML = "<br><br> 1/(" + expression2 + ") =<br>" + ans;
+                    document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                    document.getElementById('history2').innerHTML = "<br><br> 1/(" + expression2 + ") =<br>" + ans;
+                    document.getElementById('dlt-btn2').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+                }
+            }
+
+            function point(dot) {
+                let val = document.getElementById('demo');
+
+                let currentValue = val.value;
+
+                if (/[.]$/.test(currentValue)) {
+                    val.value = val.slice(0, -1) + dot;
+                } else {
+                    val.value += dot;
+
+                }
+
+                // ans = 1 / val;
+                // expression2 = document.getElementById('his').value;
+                // document.getElementById('his').value = "1/(" + expression2 + ") =";
+
+                // document.getElementById('demo').value = ans;
+                // document.getElementById('empty').innerHTML = "";
+
+                // document.getElementById('history').innerHTML = "<br><br> 1/(" + expression2 + ") =<br>" + ans;
+                // document.getElementById('dlt-btn').innerHTML = '<button onclick="clearHistory()" class="dlt-btn"><svg height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#f4f5f6" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></button>'
+
+            }
+
+            function clearHistory() {
+                document.getElementById('empty').innerHTML = "There's no history yet.";
+                document.getElementById('dlt-btn').innerHTML = "";
+                document.getElementById('history').innerHTML = "";
+
+                document.getElementById('empty2').innerHTML = "There's no history yet.";
+                document.getElementById('dlt-btn2').innerHTML = "";
+                document.getElementById('history2').innerHTML = "";
+
+            }
+
+            function clearVisual() {
+                document.getElementById('demo').value = "";
+                document.getElementById('his').value = "";
+
+            }
+
+            function remove() {
+                let rem = document.getElementById('demo').value;
+                let rem2 = document.getElementById('his').value;
+
+                var currentValue = rem.slice(0, -1);
+                var currentValue2 = rem2.slice(0, -1);
+
+                document.getElementById('demo').value = currentValue;
+                document.getElementById('his').value = currentValue2;
+
+            }
+
+        </script>
+
+    </div>
+</body>
+
+</html>

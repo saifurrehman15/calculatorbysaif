@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="body">
+        <div style="display: flex;align-items: center;flex-direction: column;">
+            <div class="screen">
+                <input type="text" name="" placeholder="0" id="demo" readonly>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <button onclick="remove('del')" class="dlt">
+                    <img src="images/Vector.png" height="18" width="20" alt="">
+                </button>
+                <input type="button" name="" id="" value="CE" onclick="clearVisual('CE')" class="dlt">
+
+                <input type="button" name="" id="" value="√" onclick="operator('√')"
+                    style="background-color: #005DB2;width: 65px;">
+                <input type="button" name="" id="" value="÷" onclick="operator('/')"
+                    style="background-color: #005DB2;width: 65px;">
+            </div>
+
+            <div class="row">
+                <input type="button" name="" id="" value="7" onclick="numberVisual('7')">
+                <input type="button" name="" id="" value="8" onclick="numberVisual('8')">
+                <input type="button" name="" id="" value="9" onclick="numberVisual('9')">
+                <input type="button" name="" id="" value="x" onclick="operator('*')"
+                    style="background-color: #005DB2;width: 65px;">
+
+            </div>
+            <div class="row">
+                <input type="button" name="" id="" value="4" onclick="numberVisual('4')">
+                <input type="button" name="" id="" value="5" onclick="numberVisual('5')">
+                <input type="button" name="" id="" value="6" onclick="numberVisual('6')">
+                <input type="button" name="" id="" value="+" onclick="operator('+')"
+                    style="background-color: #005DB2;width: 65px;">
+
+            </div>
+            <div class="row">
+                <input type="button" name="" id="" value="1" onclick="numberVisual('1')">
+                <input type="button" name="" id="" value="2" onclick="numberVisual('2')">
+                <input type="button" name="" id="" value="3" onclick="numberVisual('3')">
+                <input type="button" name="" id="" value="-" onclick="operator('-')"
+                    style="background-color: #005DB2;width: 65px;">
+
+            </div>
+            <div class="row">
+                <input type="button" name="" id="" value="00" onclick="numberVisual('00')">
+                <input type="button" name="" id="" value="0" onclick="numberVisual('0')">
+                <input type="button" name="" id="" value="." onclick="numberVisual('.')">
+                <input type="button" name="" id="" value="=" onclick="calculate('=')" class="cal">
+
+            </div>
+
+
+        </div>
+        <div id="check"></div>
+        <!-- <script>
+
+            // function calculate() {
+            //     let currentValue = document.getElementById('demo').value.slice(-1);
+            //     let result;
+            //     console.log(currentValue)
+            //     if (currentValue === "+" || currentValue === "-" || currentValue === "*" || currentValue === "/" || currentValue === "√") {
+            //         result = "Syntax Error";
+            //         document.getElementById('demo').value = result;
+
+            //     } else {
+            //         let expression = document.getElementById('demo').value;
+
+            //         // Split the expression into numbers and operators
+            //         let numbers = expression.split(/[-+*/√]/).map(Number).filter(isFinite);
+            //         let operators = expression.split('').filter(char => "+-*/√".includes(char));
+
+            //         // Initialize the result with the first number
+            //         let result = numbers[0];
+
+            //         // Perform arithmetic operations
+            //         for (let i = 0; i < operators.length; i++) {
+            //             let num = numbers[i + 1];
+            //             switch (operators[i]) {
+            //                 case "+":
+            //                     result += num;
+            //                     break;
+            //                 case "-":
+            //                     result -= num;
+            //                     break;
+            //                 case "*":
+            //                     result *= num;
+            //                     break;
+            //                 case "/":
+            //                     if (num !== 0) {
+            //                         result /= num;
+            //                     } else {
+            //                         result = "Error: Division by zero";
+            //                     }
+            //                     break;
+            //                 case "√":
+            //                     let myNum = expression.slice(i + 1);
+            //                     result = Math.sqrt(myNum);
+            //                     // console.log(myNum)
+            //                     document.getElementById('demo').value = result;
+            //                     break;
+
+            //                 default:
+            //                     result = "Syntax Error";
+            //             }
+            //         }
+
+
+
+            //         // Display the result
+            //         document.getElementById('demo').value = result;
+            //     }
+            // }
+ 
+
+
+
+
+
+
+
+
+
+
+        function operator(value2) {
+            var input = document.getElementById("demo");
+            var currentValue = input.value;
+
+            // Check if the current value ends with an operator
+            if (/[-+*/]$/.test(currentValue)) {
+                // If yes, replace the existing operator with the new one
+                input.value = currentValue.slice(0, -1) + value2;
+            } else {
+                // If not, append the new operator
+                input.value += value2;
+            }
+        }
+        function numberVisual(value) {
+            document.getElementById("demo").value += value;
+        }
+
+        function clearVisual() {
+            document.getElementById("demo").value = ""
+        }
+        function remove(del){
+            var input = document.getElementById("demo");
+            var currentValue = input.value;
+            input.value = currentValue.slice(0, -1);
+        }
+        function calculate() {
+            var expression = document.getElementById("demo");
+            var Check2 = expression.value;
+            var inputElement = document.getElementById("demo");
+            var inputValue = inputElement.value;
+
+            if (Check2 == "") {
+                document.getElementById('demo').value = "Syntax Error"
+            } else {
+                var result = eval(Check2);
+                document.getElementById("demo").value = result;
+            }
+        }
+    </script> -->
+
+        <script>
+            function numberVisual(value) {
+
+                document.getElementById('demo').value += value;
+
+
+            }
+            function clearVisual() {
+                document.getElementById('demo').value = "";
+            }
+            function operator(value2) {
+                var input = document.getElementById('demo');
+                var currentValue = input.value;
+                if (/[-+*/√]$/.test(currentValue)) {
+                    // If yes, replace the existing operator with the new one
+                    input.value = currentValue.slice(0, -1) + value2;
+                } else {
+
+
+
+                    input.value += value2;
+
+                }
+            }
+            function calculate() {
+            }
+            function calculate() {
+
+                var expression = document.getElementById('demo').value;
+                let numbers = expression.split(/[-+*/]/).map(Number).filter(isFinite);
+            let operators = expression.split('').filter(char => "+-*/√".includes(char));
+               
+                console.log(numbers)
+                var firstNum = numbers[0];
+
+                console.log(operators)
+                for (let i = 0; i < operators.length; i++) {
+
+                    var num = numbers[i + 1];
+                    if (operators[i] === "+") {
+                        firstNum += num;
+                        // count++;
+                        // // console.log(count)
+
+                        // if (count == 2) {
+                        //     let num2 = Number(numbers.slice(i - 1));
+                        //     console.log(num2)
+                        //     console.log(numbers[i])
+                        //     let num1 = Number(expression.slice(0, i));
+                        //     let ans = num1 + num2;
+                        //     document.getElementById('demo').value = ans;
+
+
+                        // }
+                        // let num2 = Number(expression.slice(i + 1));
+                        // document.getElementById('check').innerHTML = num2;
+                        // let num1 = Number(expression.slice(0, i));
+                        // let ans = num1 + num2;
+
+                        document.getElementById('demo').value = firstNum;
+
+
+                    }
+
+                    else if (operators[i] === "*") {
+                        // let num2 = Number(expression.slice(i + 1));
+                        // let num1 = Number(expression.slice(0, i));
+
+                        // let ans = num1 * num2;
+                        firstNum *= num;
+                        document.getElementById('demo').value = firstNum;
+                    }
+                    else if (operators[i] === "/") {
+                        firstNum /= num
+                        // let num2 = Number(expression.slice(i + 1));
+                        // let num1 = Number(expression.slice(0, i));
+                        // let ans = num1 / num2;
+                        document.getElementById('demo').value = firstNum;
+                    }
+                    else if (operators[i] === "-") {
+                        firstNum -= num;
+                        // let num2 = Number(expression.slice(i + 1));
+                        // let num1 = Number(expression.slice(0, i));
+                        // let ans = num1 - num2;
+                        document.getElementById('demo').value = firstNum;
+                    }
+                    else if (expression[i] === "√") {
+
+                        let num2 = Number(expression.slice(i + 1));
+                        let ans = Math.sqrt(num2);
+                        document.getElementById('demo').value = ans;
+                    }
+                }
+
+
+            }
+            function remove() {
+                var rem = document.getElementById('demo').value;
+                var currentValue = rem.slice(0, -1);
+                document.getElementById('demo').value = currentValue;
+            }
+
+
+                        // let operators = '';
+            // function calculate() {
+
+            //     var expression = document.getElementById('demo').value;
+
+            //     let ans = 0;
+            //     let mulAns = 1;
+            //     let numberStart = 0;
+            //     let minus = 0;
+            //     for (let i = 0; i < expression.length; i++) {
+            //         if (expression[i] === "+") {
+            //             let num = Number(expression.slice(numberStart, i));
+            //             operators = "+";
+            //             ans += num;
+            //             numberStart = i + 1;
+
+            //         }
+            //         if (expression[i] === "*") {
+            //             let num = Number(expression.slice(numberStart, i));
+            //             ans = 1;
+            //             operators = "*";
+            //             console.log(num);
+
+            //             ans *= num;
+            //             numberStart = i + 1;
+            //         }
+            //         if (expression[i] === "/") {
+            //             let num = Number(expression.slice(numberStart, i));
+            //             operators = "/";
+            //             console.log(num);
+
+            //             ans = num;
+            //             numberStart = i + 1;
+            //         }
+            //         if (expression[i] === "-") {
+            //             let num = Number(expression.slice(numberStart, i));
+            //             operators = "-";
+            //             console.log(expression.slice(0));
+
+            //             ans -= num * - 1;
+            //             numberStart = i + 1;
+            //         }
+            //     }
+
+            //     if (operators === "+") {
+            //         let lastNum = Number(expression.slice(numberStart));
+            //         console.log(lastNum);
+            //         ans += lastNum;
+            //         document.getElementById('demo').value = ans;
+            //     }
+            //     if (operators === "*") {
+            //         let lastNum = Number(expression.slice(numberStart));
+
+            //         ans *= lastNum;
+            //         document.getElementById('demo').value = ans;
+            //     }
+            //     if (operators === "/") {
+            //         let lastNum = Number(expression.slice(numberStart));
+
+            //         ans /= lastNum;
+            //         document.getElementById('demo').value = ans;
+            //     }
+            //     if (operators === "-") {
+            //         let lastNum = Number(expression.slice(numberStart));
+
+            //         ans -= lastNum;
+            //         document.getElementById('demo').value = ans;
+            //     }
+            // }
+
+
+
+
+            // else if (expression[i] === '√') {
+            //     ans = Math.sqrt(num2);
+            //     document.getElementById('demo').value = ans;
+
+            // }
+
+
+        /* <script>
+        function operator(value2) {
+            var input = document.getElementById("demo");
+            var currentValue = input.value;
+
+            // Check if the current value ends with an operator
+            if (/[-*+/]$/.test(currentValue)) {
+                // If yes, replace the existing operator with the new one
+                input.value = currentValue.slice(0, -1) + value2;
+            } else {
+                // If not, append the new operator
+                input.value += value2;
+            }
+        }
+        function numberVisual(value) {
+            document.getElementById("demo").value += value;
+        }
+
+        function clearVisual() {
+            document.getElementById("demo").value = ""
+        }
+        function remove(del){
+            var input = document.getElementById("demo");
+            var currentValue = input.value;
+            input.value = currentValue.slice(0, -1);
+        }
+        function calculate() {
+            var expression = document.getElementById("demo");
+            var Check2 = expression.value;
+            var inputElement = document.getElementById("demo");
+            var inputValue = inputElement.value;
+
+            if (Check2 == "") {
+                document.getElementById('demo').value = "Syntax Error"
+            } else {
+                var result = eval(Check2);
+                document.getElementById("demo").value = result;
+            }
+        }
+    </script> 
+
+        </script>
+
+</body>
+
+</html>
